@@ -1,95 +1,137 @@
-ACPI	Advanced Configuration and Power Interface
-		Provides an open standard that operating systems can use for hardware discovery, config, power mgmt, and monitoring
-AMD		Advanced Micro Devices
-AML		ACPI Machine Language
-		Defines a type of machine language, usually found in ACPI tables provides the ACPI firmware functionality
-ARD		? Active Requirements Doc
-AVX		Advanced Vector Extensions
-		Extensions to the x86 instruction set for Intel and AMD
-AVX2	Advanced Vector Extensions 2
-		Expands most integer commands to 256 bits and introduces FMA
-AVX-512	Advanced Vector Extensions 512
-		Expands most integer commands to 512 bits by utilizing the EVEX prefix
-CCTK	Client Configuration Toolkit
-		Dell software that provides BIOS configuration capabilities to Dell client systems like Optiplex, Latitude, and Precision workstations
-CMOS	Complementary Metal-Oxide-Semiconductor
-		BIOS Configuration memory stores BIOS settings
-CSI		Common System Interface
-		Intel used this term to refer to QPI in earlier processor models
-DCR		? Design Change Request
-DDR		Double Data Rate
-		A bus that transfers data on both rising and falling clock edges
-DIMM	Dual Inline Memory Module
-		This is the typical looking memory stick
-DMI		Direct Media Interface
-		Intel's proprietary link between north/south bridges. DMI 2.0 introduced in 2011 at 2GB/s. DMI 3.0 introduced Aug 2015 at 8 GT/s
-DRAM	Dynamic Random Access Memory
-		Memory that stores each bit in a separate capacitor.
-		Dynamic because transistors still leak a small amount and thus must be refreshed periodically
-DSI		Display Serial Interface
-		A specification by MIPI Alliance aimed at reducing cost of display controllers in a mobile device and commonly targeted at LCD technology. Implemented as a high-speed differential signaling point-to-point serial bus
-ECC		Error-Correcting Code memory
-		A type of computer data storage that can detect and correct the most common kinds of internal data corruption. ECC memory maintains a memory system immune to single-bit errors
-ELF		Executable and Linkable Format
-		The file format used for executable files, object files, and libraries in Linux.
-EV6		Bus name in the Athlon architecture from AMD
-		AMD's version of Intel's FSB
-EVEX	Enhanced Vector Extension
-		An extension to the 32-bit x86 (IA-32) and 64-bit x86_64 (AMD64) instruction sets
-FM		Feature Matrix
-FMA		Fused Multiply-Accumulate
-		A floating-point multiply-add operation performed in one step with a single rounding. That is, where an unfused multiply-add (x+y*z) would compute the product of y*z, round it to N significant bits, add the result to x, and round back to N significant bits, a fused multiply-add would compute the entire expression x+y*z to its full precision before rounding the final result down to N significant bits
-FSB		Front-Side Bus
-		Found on Intel architectures, this carries data between the CPU and memory controller hub (northbridge). FSB was replaced by QPI. The speed of the FSB is often used to determine system performance
-FWH		Firmware Hub
-HPC		High Performance Computing
-		Group at Dell
-GoE		? Group of Experts
-GRUB	GRand Unified Bootloader
-IMC		Integrated Memory Controller
-		A digital circuit that manages the flow of data to and from a computer's main memory, especially when placed on the same die/chip as the microprocessor.  When not integrated to the microprocessor, it's also known as Memory Chip Controller (MCC) or Memory Controller Unit (MCU)
-IOPS	I/O Operations Per Second
-		A common performance measurement used to benchmark computer storage devices, i.e. HDDs, SSDs, and storage area networks (SAN). It can be measured with Iometer, IOzone, FIO, nmon, sar, etc.
-LPC		Low Pin Count (bus)
-		Used on IBM-compatible PC's to connect low bandwidth devices to the CPU. Most PC's with an LPC bus usually have a PCH or southbridge
-M.2		Next Generation Form Factor (NGFF)
-		A specification for internally mounted computer expansion cards. M.2 replaces mSATA and supports busses PCIe 3.0, SATA 3.0, and USB 3.0. The specification lists different types of connectors, each with different physical notches that denote various capabilities/features.
-MIPI	Mobile Industry Processor Interface
-MSR		Model Specific Register
-		Any of various control registers in the x86/64 instruction set used for debugging, execution tracing, perf monitoring, etc
-NGFF	Next Generation Form Factor
-		Original name for M.2
-NUMA	Non-Uniform Memory Access
-		If a system is NUMA-capable, then this allows for 1+ CPU sockets
-PAPI	Performance Application Programming Interface
-		A portable interface to hardware performance counters in the CPU
-PCH		Platform Controller Hub
-		Successor to the Intel Hub Architecture which used north/south bridge. First appeared in Intel 5 series chipsets in 2008 (codenamed Ibex Peak) and was connected to the CPU via the DMI bus
-PCU		Power Control Unit
-PDL 	Page Description Language
-		Specifies the arrangement of a printed page through commands from a computer that the printer carries out. HP's Printer Control Language (PCL) and Adobe's PostScript are the two most commonly used PDL's.
-PLM 	Product Lifecycle Management
-		The process of managing the entire lifecycle of a product from inception, through engineering design and manufacture, to service and disposal of manufactured products
-PMU		Performance Monitoring Unit
-		Logical part of modern processors that can be configured to monitor (count) various types of performance-related hardware events
-QPI		(Intel) QuickPath Interconnect
-		Point-to-point processor interconnect that replaces the front side bus
-SATA	Serial Advanced Technology Attachment (or Serial ATA)
-		Communicate via high-speed serial cable over two pairs of conductors
-SDRAM	Synchronous Dynamic Random Access Memory
-		This is DRAM that is synchronized with the system bus, which allows for pipelining instructions (vs classic DRAM)
-SME		Subject Matter Expert
-SMT		Surface Mount Technology
-SPEC	Standard Performance Evaluation Corporation
-		A big bunch of crapbags that make running benchmarks near impossible on Linux
-SRAM	Static Random Access Memory
-		Uses bistable latching circuitry (flip-flop) to store each bit
-TBW		Total Bytes Written
-		Usually refers to SSD/hard disk I/O
-TLB		Translation Lookaside Buffer
-		An Intel processor may cache information about the translation of linear addresses in TLBs. In general, TLBs contain entries that map page numbers to page frames.
-TPS		Transfers Per Second
-ULV 	Ultra Low Voltage
-		A class of microprocessor that are deliberately underclocked to use less power (under 17W typically) at the expense of performance.
-VDI		Virtual Desktop Infrastructure
-		Practice of hosting a desktop OS within a VM running on a centralized server. Is a variation on the client/server computing model, sometimes referred to as server-based computing. Coined by VMware, Inc.
+ACPI    Advanced Configuration and Power Interface
+        Provides an open standard that operating systems can use for hardware
+        discovery, config, power mgmt, and monitoring
+AMD     Advanced Micro Devices
+AML     ACPI Machine Language
+        Defines a type of machine language, usually found in ACPI tables
+        provides the ACPI firmware functionality
+ARD     ? Active Requirements Doc
+AVX     Advanced Vector Extensions
+        Extensions to the x86 instruction set for Intel and AMD
+AVX2    Advanced Vector Extensions 2
+        Expands most integer commands to 256 bits and introduces FMA
+AVX-512 Advanced Vector Extensions 512
+        Expands most integer commands to 512 bits by utilizing the EVEX prefix
+CCTK    Client Configuration Toolkit
+        Dell software that provides BIOS configuration capabilities to Dell
+        client systems like Optiplex, Latitude, and Precision workstations
+CMOS    Complementary Metal-Oxide-Semiconductor
+        BIOS Configuration memory stores BIOS settings
+CSI     Common System Interface
+        Intel used this term to refer to QPI in earlier processor models
+DCR     ? Design Change Request
+DDR     Double Data Rate
+        A bus that transfers data on both rising and falling clock edges
+DIMM    Dual Inline Memory Module
+        This is the typical looking memory stick
+DMI     Direct Media Interface
+        Intel's proprietary link between north/south bridges. DMI 2.0 was
+        introduced in 2011 at 2GB/s. DMI 3.0 introduced Aug 2015 at 8 GT/s
+DRAM    Dynamic Random Access Memory
+        Memory that stores each bit in a separate capacitor.
+        Dynamic because transistors still leak a small amount and thus must be
+        refreshed periodically
+DSI     Display Serial Interface
+        A specification by MIPI Alliance aimed at reducing cost of display
+        controllers in a mobile device and commonly targeted at LCD technology.
+        Implemented as a high-speed differential signaling point-to-point
+        serial bus
+ECC     Error-Correcting Code memory
+        A type of computer data storage that can detect and correct the most
+        common kinds of internal data corruption. ECC memory maintains a memory
+        system immune to single-bit errors
+ELF     Executable and Linkable Format
+        The file format used for executable files, object files, and libraries
+        in Linux.
+EV6     Bus name in the Athlon architecture from AMD
+        AMD's version of Intel's FSB
+EVEX    Enhanced Vector Extension
+        An extension to the 32-bit x86 (IA-32) and 64-bit x86_64 (AMD64)
+        instruction sets
+FM      Feature Matrix
+FMA     Fused Multiply-Accumulate
+        A floating-point multiply-add operation performed in one step with a
+        single rounding. That is, where an unfused multiply-add (x+y*z) would
+        compute the product of y*z, round it to N significant bits, add the
+        result to x, and round back to N significant bits, a fused multiply-add
+        would compute the entire expression x+y*z to its full precision before
+        rounding the final result down to N significant bits
+FSB     Front-Side Bus
+        Found on Intel architectures, this carries data between the CPU and
+        memory controller hub (northbridge). FSB was replaced by QPI. The speed
+        of the FSB is often used to determine system performance
+FWH     Firmware Hub
+HPC     High Performance Computing
+        Group at Dell
+GoE     ? Group of Experts
+GRUB    GRand Unified Bootloader
+IMC     Integrated Memory Controller
+        A digital circuit that manages the flow of data to and from a
+        computer's main memory, especially when placed on the same die/chip as
+        the microprocessor.  When not integrated to the microprocessor, it's
+        aka Memory Chip Controller (MCC) or Memory Controller Unit (MCU)
+IOPS    I/O Operations Per Second
+        A common performance measurement used to benchmark computer storage
+        devices, i.e. HDDs, SSDs, and storage area networks (SAN). It can be
+        measured with Iometer, IOzone, FIO, nmon, sar, etc.
+LPC     Low Pin Count (bus)
+        Used on IBM-compatible PC's to connect low bandwidth devices to the
+        CPU. Most PC's with an LPC bus usually have a PCH or southbridge
+M.2     Next Generation Form Factor (NGFF)
+        A specification for internally mounted computer expansion cards. M.2
+        replaces mSATA and supports busses PCIe 3.0, SATA 3.0, and USB 3.0.
+        The specification lists different types of connectors, each with
+        different physical notches that denote various capabilities/features.
+MIPI    Mobile Industry Processor Interface
+MSR     Model Specific Register
+        Any of various control registers in the x86/64 instruction set used
+        for debugging, execution tracing, perf monitoring, etc
+NGFF    Next Generation Form Factor
+        Original name for M.2
+NUMA    Non-Uniform Memory Access
+        If a system is NUMA-capable, then this allows for 1+ CPU sockets
+PAPI    Performance Application Programming Interface
+        A portable interface to hardware performance counters in the CPU
+PCH     Platform Controller Hub
+        Successor to the Intel Hub Architecture which used north/south bridge.
+        First appeared in Intel 5 series chipsets in 2008 (codenamed Ibex Peak)
+        and was connected to the CPU via the DMI bus
+PCU     Power Control Unit
+PDL     Page Description Language
+        Specifies the arrangement of a printed page through commands from a
+        computer that the printer carries out. HP's Printer Control Language
+        (PCL) and Adobe's PostScript are the two most commonly used PDL's.
+PLM     Product Lifecycle Management
+        The process of managing the entire lifecycle of a product from
+        inception, through engineering design and manufacture, to service and
+        disposal of manufactured products
+PMU     Performance Monitoring Unit
+        Logical part of modern processors that can be configured to monitor
+        (count) various types of performance-related hardware events
+QPI     (Intel) QuickPath Interconnect
+        Point-to-point processor interconnect that replaces the front side bus
+SATA    Serial Advanced Technology Attachment (or Serial ATA)
+        Communicate via high-speed serial cable over two pairs of conductors
+SDRAM   Synchronous Dynamic Random Access Memory
+        This is DRAM that is synchronized with the system bus, which allows
+        for pipelining instructions (vs classic DRAM)
+SME     Subject Matter Expert
+SMT     Surface Mount Technology
+SPEC    Standard Performance Evaluation Corporation
+        A big bunch of people that make running benchmarks near impossible
+SRAM    Static Random Access Memory
+        Uses bistable latching circuitry (flip-flop) to store each bit
+TBW     Total Bytes Written
+        Usually refers to SSD/hard disk I/O
+TLB     Translation Lookaside Buffer
+        An Intel processor may cache information about the translation of
+        linear addresses in TLBs. In general, TLBs contain entries that map
+        page numbers to page frames.
+TPS     Transfers Per Second
+ULV     Ultra Low Voltage
+        A class of microprocessor that are deliberately underclocked to use
+        less power (under 17W typically) at the expense of performance.
+VDI     Virtual Desktop Infrastructure
+        Practice of hosting a desktop OS within a VM running on a centralized
+        server. Is a variation on the client/server computing model, sometimes
+        referred to as server-based computing. Coined by VMware, Inc.
