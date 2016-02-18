@@ -1,0 +1,86 @@
+#########
+# NOTES #
+#########
+
+[] The kernel does not support "hard real-time" processing; it is not a real-time OS. There have been efforts to make Linux a real-time OS (e.g. RTLinux, Xenomai, RATI, etc), but in these implementations the kernel is run as a separate process outside the real-time execution code.
+
+[] System Call Categories
+	> Process Management - creating new tasks, querying information, debugging
+	> Signals - sending signals, timers, handling mechanisms
+	> Files - creating, opening, reading, writing, querying anything about files
+	> Directories and Filesystem - same thing with files, only to directories
+	> Protection Mechanisms - reading and changing UIDs/GIDs, namespace handling
+	> Timer Functions - timers and their stats
+
+[] All algorithms of the Linux kernel concerned with processes and programs are built around a data structure named "task_struct" and defined in <include/sched.h>
+
+[] Categories of "struct task_struct"
+	> State and execution information
+	> Information about allocated virtual memory
+	> Process credentials
+	> Files used
+	> Thread information
+	> Information on inter-process communication
+	> Signal handlers
+	
+#########################
+# HEADER FILE REFERENCE #
+#########################
+
+<kobject.h> - API for generic kernel objects, used in reference counting
+<kref.h> - Used in <kobject.h>, defines "struct kref" with one member "atomic_t refcount"
+<kernel/nsproxy.h> - Used to manage namespaces for processes
+<list.h> - API for doubly-linked lists
+<sched.h> - Includes "task_struct", one of the most essential structs in the systems, and governs almost all algorithms around processes
+
+############
+# GLOSSARY #
+############
+
+fork
+	System call that generates an identical copy of the current process (known as a child process). All resources from the original process are copied to the new process.
+	
+exec
+	System call that replaces a running process with another application loaded from an executable binary
+
+inode
+	An object containing meta data about a file or directory in Linux, including pointers to the associated hard-disk data blocks
+
+IPC (Inter Process Communication)
+	
+jiffy (jiffies)
+	A constant time base within the kernel. Global variables "jiffies" and "jiffies_64" are incremented at a constant periodic rate, usually between 100-1000 Hz. These timers are fairly coarse.
+	
+MMU (Memory Management Unit)
+	A special part of the CPU that is optimized for handling memory address translations (from virtual to physical and vice versa)
+
+modules
+	At it's simplest, modules are normal programs that operate in kernel space.
+
+PID (Process ID)
+	Uniquely assigned number for every UNIX process
+
+PGD (Page Global Directories)
+
+PMD (Page Middle Directories)
+
+PTE (Page Table Entries)
+
+scheduler
+	A kernel subsystem responsible for deciding how much time to devote to each process, when to switch processes, knowing which process is next, and ensuring that the execution environment is the exact same as it was after switching. How much time is devoted to a process is determined by the "policy". How to set up the execution environment is determined by the "task switching" mechanism.
+
+swapping
+	Enables available RAM to be virtually enlarged by using disk space as extended memory. Infrequently used pages can be written to disk when the kernel requires more RAM.
+
+system calls
+	The classic method of enabling user processes to interact with the kernel
+
+TGID (Thread Group ID)
+
+TLB (Translation Lookaside Buffer)
+	Fast CPU cache that holds the most frequently used memory addresses, such that address translation does not occur when the memory is needed
+
+UTS (UNIX Time Sharing)	
+
+VFS (Virtual File System)
+	A software layer that sits between the various file system types and the kernel, such that it abstracts the complexities/idiosyncrasies of each file system type from the kernel itself. Thus, all file systems on Linux must implement the VFS, and system calls only interact with the VFS.
