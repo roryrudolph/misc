@@ -1,0 +1,15 @@
+Acronyms
+
+ARD		? Active Requirements Doc
+DCR		-
+EMM		- something with mechanical
+EMP		- something with mechanical
+FM		- Feature Matrix
+GoE		- 
+MIPI-DP	- 
+PDL		- 
+PLM		- 
+PPE		- 
+SME		- Subject Matter Expert
+SMT		- Surface Mount Technology
+ULV		- 
