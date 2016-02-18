@@ -1,15 +1,18 @@
 Acronyms
 
 ARD		? Active Requirements Doc
-DCR		-
-EMM		- something with mechanical
-EMP		- something with mechanical
-FM		- Feature Matrix
-GoE		- 
-MIPI-DP	- 
-PDL		- 
-PLM		- 
-PPE		- 
-SME		- Subject Matter Expert
-SMT		- Surface Mount Technology
-ULV		- 
+DCR		? Design Change Request
+DSI		Display Serial Interface
+		A specification by MIPI Alliance aimed at reducing cost of display controllers in a mobile device and commonly targeted at LCD technology. Implemented as a high-speed differential signaling point-to-point serial bus
+FM		Feature Matrix
+GoE		? Group of Experts
+MIPI	Mobile Industry Processor Interface
+PDL 	Page Description Language
+		Specifies the arrangement of a printed page through commands from a computer that the printer carries out. HP's Printer Control Language (PCL) and Adobe's PostScript are the two most commonly used PDL's.
+PLM 	Product Lifecycle Management
+		The process of managing the entire lifecycle of a product from inception, through engineering design and manufacture, to service and disposal of manufactured products
+PPE 	
+SME		Subject Matter Expert
+SMT		Surface Mount Technology
+ULV 	Ultra Low Voltage
+		A class of microprocessor that are deliberately underclocked to use less power (under 17W typically) at the expense of performance.
