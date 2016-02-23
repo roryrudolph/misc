@@ -108,6 +108,7 @@ PLM     Product Lifecycle Management
 PMU     Performance Monitoring Unit
         Logical part of modern processors that can be configured to monitor
         (count) various types of performance-related hardware events
+PPE     Plan Phase Exit
 QPI     (Intel) QuickPath Interconnect
         Point-to-point processor interconnect that replaces the front side bus
 SATA    Serial Advanced Technology Attachment (or Serial ATA)
