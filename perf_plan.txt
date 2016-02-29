@@ -2,7 +2,7 @@
 ##  PERFORMANCE PLAN  ##
 ########################
 
-PHASE 1
+PHASE 1 (Now)
 ( ) Determine how Validation currently test I/O interfaces
 	- USB 2.0 / USB 3.0
 	- Wifi 802.11abgn
@@ -40,11 +40,12 @@ PHASE 1
 	- ...
 ( ) Finish Performance Plan document
 
-PHASE 2
+PHASE 2 (Caracalla)
+( ) Basic automation workload/stress scripts
 ( ) IoT device simulator(s)
 ( ) 
 
-PHASE 3
+PHASE 3 (FY18+)
 ( ) Automated work/stress scripts
 ( ) Test harness board layout
 
