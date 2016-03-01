@@ -66,7 +66,6 @@ FSB     Front-Side Bus
 FWH     Firmware Hub
 HPC     High Performance Computing
         Group at Dell
-GoE     Group of Experts
 GRUB    GRand Unified Bootloader
 IMC     Integrated Memory Controller
         A digital circuit that manages the flow of data to and from a
