@@ -39,6 +39,7 @@ DSI     Display Serial Interface
         controllers in a mobile device and commonly targeted at LCD technology.
         Implemented as a high-speed differential signaling point-to-point
         serial bus
+DPO
 ECC     Error-Correcting Code memory
         A type of computer data storage that can detect and correct the most
         common kinds of internal data corruption. ECC memory maintains a memory
@@ -113,8 +114,10 @@ PMU     Performance Monitoring Unit
 PPE     Plan Phase Exit
 QPI     (Intel) QuickPath Interconnect
         Point-to-point processor interconnect that replaces the front side bus
+RFD
 SATA    Serial Advanced Technology Attachment (or Serial ATA)
         Communicate via high-speed serial cable over two pairs of conductors
+SDL
 SDRAM   Synchronous Dynamic Random Access Memory
         This is DRAM that is synchronized with the system bus, which allows
         for pipelining instructions (vs classic DRAM)
