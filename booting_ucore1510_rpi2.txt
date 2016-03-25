@@ -1,0 +1,71 @@
+###################################################
+##  Booting Ubuntu Core 15.10 on Raspberry Pi 2  ##
+###################################################
+
+Needed:
+2	microSD (uSD) cards, for Ubuntu Core 15.10 and Raspbian
+1	Raspberry Pi 2
+1	PC running Linux (Ubuntu Desktop 15.10 amd64 in my case)
+
+NOTE: I only needed Rasbian for a few boot-loader files, so if you already have a uSD card imaged with some other RPi2 OS, then that should work fine.
+
+1.	Install Raspbian to uSD card #1
+
+|------|
+| TODO | where are Raspbian installation instructions?
+|------|
+
+2.	Copy boot loader files to local disk
+
+|------|
+| TODO | which files?
+|------|
+
+3.	Partition uSD card #2
+
+|------|
+| TODO | how to partition (size, labels, types,etc)?
+|------|
+
+4.	Compile and install your kernel following these steps
+	https://www.raspberrypi.org/documentation/linux/kernel/building.md
+5.	Copy boot loader files from before to first partition
+6.	Download "ubuntu-core-15.10-core-armhf.tar.gz" from here: 
+	http://cdimage.ubuntu.com/ubuntu-core/releases/15.10/release/
+7.	Unpack rootfs to second partition
+8.	Boot Raspberry Pi 2 from uSD card #1 (Raspbian)
+9.	sudo mv <mnt_dir>/etc/resolv.conf <mnt_dir>/etc/resolv.conf.orig 
+	sudo cp /etc/resolv.conf <mnt_dir>/etc/resolv.conf
+10.	for f in sys proc dev; do sudo mount --rbind /$f <mnt_dir>/$f; done; sudo chroot <mnt_dir>
+
+11.	apt-get update
+12.	Re-generate locales
+	export LANGUAGE=en_US.UTF-8
+	export LANG=en_US.UTF-8
+	export LC_ALL=en_US.UTF-8
+	locale-gen en_US.UTF-8
+	dpkg-reconfigure locales
+13.	apt-get install dialog ssh sudo
+	OPTIONAL: nano build-essential git man lsb-release lshw ftp parted
+14.	apt-get upgrade -y
+15.	apt-get dist-upgrade -y
+
+16.	adduser <username>
+17.	adduser <username> sudo 
+	OPTIONAL: adduser <username> adm
+19.	blkid | grep mmcblk0p2 | cut -d' ' -f3 >> /etc/fstab
+20.	nano /etc/fstab
+	UUID="<UUID>" / ext4 errors=remount-ro 0 1
+18.	Poweroff
+17.	Boot from uSD card #2 (Ubuntu Core 15.10)
+21.	sudo nano /etc/hostname
+22.	sudo nano /etc/hosts
+23.	sudo nano /etc/network/interfaces
+24.	sudo nano /etc/udev/rules.d/75-persistent-net-generator.rules
+25.	sudo nano /etc/gai.conf
+26.	sudo systemctl daemon-reload
+27.	sudo systemctl stop networking.service
+28.	sudo systemctl start networking.service
+
+EFI Booting:
+http://ubuntuforums.org/showthread.php?t=2223856&page=3
