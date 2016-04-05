@@ -5,7 +5,8 @@ AMD     Advanced Micro Devices
 AML     ACPI Machine Language
         Defines a type of machine language, usually found in ACPI tables
         provides the ACPI firmware functionality
-ARD     ? Active Requirements Doc
+ARD     Active Requirements Doc
+ATS     Approved to Ship
 AVX     Advanced Vector Extensions
         Extensions to the x86 instruction set for Intel and AMD
 AVX2    Advanced Vector Extensions 2
@@ -22,7 +23,7 @@ CMOS    Complementary Metal-Oxide-Semiconductor
         BIOS Configuration memory stores BIOS settings
 CSI     Common System Interface
         Intel used this term to refer to QPI in earlier processor models
-DCR     ? Design Change Request
+DCR     Design Change Request
 DDR     Double Data Rate
         A bus that transfers data on both rising and falling clock edges
 DIMM    Dual Inline Memory Module
@@ -114,10 +115,12 @@ PMU     Performance Monitoring Unit
 PPE     Plan Phase Exit
 QPI     (Intel) QuickPath Interconnect
         Point-to-point processor interconnect that replaces the front side bus
-RFD
+RFD     Release From Development
+RTO     Ready To Order
+        Occurs after RTS, online orders/website ready for purchasing
+RTS     Ready To Ship
 SATA    Serial Advanced Technology Attachment (or Serial ATA)
         Communicate via high-speed serial cable over two pairs of conductors
-SDL
 SDRAM   Synchronous Dynamic Random Access Memory
         This is DRAM that is synchronized with the system bus, which allows
         for pipelining instructions (vs classic DRAM)
