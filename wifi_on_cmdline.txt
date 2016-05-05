@@ -1,0 +1,24 @@
+############################################
+#  Bringing Up Wifi from the Command Line  #
+#  Rory Rudolph, 2016-04-10                #
+############################################
+
+sudo iw dev
+
+sudo iw wlan0 link
+
+sudo iw wlan0 scan | grep SSID
+
+sudo su
+wpa_passphrase <SSID> >> /etc/wpa_supplicant.conf
+<password>
+exit
+
+sudo vi /etc/wpa_supplicant.conf
+<arrow down to the #psk=... line>
+<type dd to delete the line>
+:wq
+
+sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf
+
+sudo reboot
