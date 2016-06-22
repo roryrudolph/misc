@@ -26,3 +26,8 @@ done
 ------------------------------------------------------------
 Is cron enabled?
 ps aux | grep crond
+------------------------------------------------------------
+Create a file of a certain size
+dd if=/dev/zero of=myfile bs=block_szie count=num_blocks
+where the file size is the = block_size * num_blocks
+
