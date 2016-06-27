@@ -30,4 +30,8 @@ ps aux | grep crond
 Create a file of a certain size
 dd if=/dev/zero of=myfile bs=block_szie count=num_blocks
 where the file size is the = block_size * num_blocks
-
+------------------------------------------------------------
+Dump GCC Preprocessor Defines
+gcc -E -dM - < /dev/null | sort
+or on systems without /dev/null (i.e. windows)
+echo | gcc -E -dM | sort
