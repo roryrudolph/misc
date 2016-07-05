@@ -15,7 +15,7 @@ EX:	cat {file1,file2,file3} > combined_file
 EX:	cp file22.{txt,backup}
 	Copies "file22.txt" to "file22.backup"
 ------------------------------------------------------------
-Holy crap all these architectures get confusing:
+Architectures that do NOT mean the same thing:
 ia64, amd64, i386, i686, x86_64, x86
 ------------------------------------------------------------
 How to show the crontab for every user on the system:
@@ -35,3 +35,7 @@ Dump GCC Preprocessor Defines
 gcc -E -dM - < /dev/null | sort
 or on systems without /dev/null (i.e. windows)
 echo | gcc -E -dM | sort
+------------------------------------------------------------
+Get size of git repo
+git bundle create tmp.bundle --all
+du -sh tmp.bundle
