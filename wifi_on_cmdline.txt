@@ -3,22 +3,29 @@
 #  Rory Rudolph, 2016-04-10                #
 ############################################
 
+# get available physical interfaces
 sudo iw dev
 
+# get wifi link status
 sudo iw wlan0 link
 
+# find the SSID's in the area
 sudo iw wlan0 scan | grep SSID
 
+# add a passphrase for SSID
 sudo su
 wpa_passphrase <SSID> >> /etc/wpa_supplicant.conf
 <password>
 exit
 
+# remove the plain-text passphrase from the conf file
+# that the step above created
 sudo vi /etc/wpa_supplicant.conf
 <arrow down to the #psk=... line>
 <type dd to delete the line>
 :wq
 
+# initialize wpa_supplicant
 sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant.conf
 
 sudo reboot
