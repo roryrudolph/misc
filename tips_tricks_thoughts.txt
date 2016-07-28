@@ -39,3 +39,10 @@ echo | gcc -E -dM | sort
 Get size of git repo
 git bundle create tmp.bundle --all
 du -sh tmp.bundle
+------------------------------------------------------------
+Write an .img.xz file to USB in one line
+xz -dc myimage.img.xz | dd of=/dev/sdX bs=1M -
+------------------------------------------------------------
+Monitor dd progress
+while sudo pkill -USR1 dd; do sleep 2; done
+
