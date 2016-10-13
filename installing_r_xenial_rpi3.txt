@@ -11,6 +11,7 @@ cd R-3.3.1
 
 sudo apt-get install gfortran libreadline6-dev libx11-dev libxt-dev libpcre3-dev default-jdk
 sudo apt-get install liblzma-dev libbz2-dev texinfo
+sudo apt-get install texlive-latex-base # This is huge! 242MB!
 
 sudo ./configure
 sudo make # this will take ~1hr

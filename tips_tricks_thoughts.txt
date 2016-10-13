@@ -45,4 +45,4 @@ xz -dc myimage.img.xz | dd of=/dev/sdX bs=1M -
 ------------------------------------------------------------
 Monitor dd progress
 while sudo pkill -USR1 dd; do sleep 2; done
-
+------------------------------------------------------------
