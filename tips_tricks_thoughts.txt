@@ -46,3 +46,5 @@ xz -dc myimage.img.xz | dd of=/dev/sdX bs=1M -
 Monitor dd progress
 while sudo pkill -USR1 dd; do sleep 2; done
 ------------------------------------------------------------
+Get the network interface <INTF> IP address
+ip addr show <INTF> | grep "inet " | sed -r 's|.*inet ([0-9.]+)/.*|\1|'
