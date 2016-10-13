@@ -1,0 +1,22 @@
+Install Xenial on RPi3.
+
+Visit https://cran.rstudio.com/src/base/R-3/ and find desired R version.
+In this case I use version 3.3.1.
+
+mkdir rsource
+cd rsource
+wget https://cran.rstudio.com/src/base/R-3/R-3.3.1.tar.gz
+tar zxvf R-3.3.1.tar.gz
+cd R-3.3.1
+
+sudo apt-get install gfortran libreadline6-dev libx11-dev libxt-dev libpcre3-dev default-jdk
+sudo apt-get install liblzma-dev libbz2-dev texinfo
+sudo apt-get install texlive-latex-base # This is huge! 242MB!
+
+sudo ./configure
+sudo make # this will take ~1hr
+sudo make check
+sudo make info
+sudo make install-info
+
+sudo R

@@ -1,0 +1,50 @@
+Tips, Tricks, and Thoughts
+------------------------------------------------------------
+Nulls a file. Creates it if it does not exist
+Same effect as cat /dev/null >data.xxx
+However, this does not fork a new process since ":" is a builtin.
+: > myNewFile.xxx
+------------------------------------------------------------
+Process ID: $$
+------------------------------------------------------------
+Brace Expansion: {xxx,yyy,zzz}
+EX:	echo \"{These,words,are,quoted}\" # " prefix and suffix
+	"These" "words" "are" "quoted"
+EX:	cat {file1,file2,file3} > combined_file
+	Concatenates the files file1, file2, and file3 into combined_file.
+EX:	cp file22.{txt,backup}
+	Copies "file22.txt" to "file22.backup"
+------------------------------------------------------------
+Architectures that do NOT mean the same thing:
+ia64, amd64, i386, i686, x86_64, x86
+------------------------------------------------------------
+How to show the crontab for every user on the system:
+for u in $( cat passwd | cut -d: -f1 ); do
+	echo Showing crontab for $u
+	sudo crontab -u $u -l
+done
+------------------------------------------------------------
+Is cron enabled?
+ps aux | grep crond
+------------------------------------------------------------
+Create a file of a certain size
+dd if=/dev/zero of=myfile bs=block_szie count=num_blocks
+where the file size is the = block_size * num_blocks
+------------------------------------------------------------
+Dump GCC Preprocessor Defines
+gcc -E -dM - < /dev/null | sort
+or on systems without /dev/null (i.e. windows)
+echo | gcc -E -dM | sort
+------------------------------------------------------------
+Get size of git repo
+git bundle create tmp.bundle --all
+du -sh tmp.bundle
+------------------------------------------------------------
+Write an .img.xz file to USB in one line
+xz -dc myimage.img.xz | dd of=/dev/sdX bs=1M -
+------------------------------------------------------------
+Monitor dd progress
+while sudo pkill -USR1 dd; do sleep 2; done
+------------------------------------------------------------
+Get the network interface <INTF> IP address
+ip addr show <INTF> | grep "inet " | sed -r 's|.*inet ([0-9.]+)/.*|\1|'

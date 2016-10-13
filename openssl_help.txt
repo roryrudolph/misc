@@ -1,0 +1,76 @@
+OpenSSL Commands and Help
+------------------------------------------------------------------------------
+Creating Private Keys
+> openssl genrsa -des3 -out my.key 2048
+
+Verify private key
+> openssl rsa -check -in my.key
+
+Use these commands to verify if a private key (domain.key) matches a
+certificate (domain.crt) and CSR (domain.csr). If the output of each command
+is identical there is an extremely high probability that the private key,
+certificate, and CSR are related.
+> openssl rsa -noout -modulus -in domain.key | openssl md5
+> openssl x509 -noout -modulus -in domain.crt | openssl md5
+> openssl req -noout -modulus -in domain.csr | openssl md5
+
+This takes an unencrypted private key (unencrypted.key) and outputs an
+encrypted version of it (encrypted.key):
+> openssl rsa -des3 -in unencrypted.key -out encrypted.key
+
+This takes an encrypted private key (encrypted.key) and outputs a decrypted
+version of it (decrypted.key):
+> openssl rsa -in encrypted.key -out decrypted.key
+
+Convert PEM to PKCS12
+PKCS12 files, also known as PFX files, are typically used for importing and exporting certificate chains in Micrsoft IIS (Windows).
+Use this command if you want to take a private key (domain.key) and a
+certificate (domain.crt), and combine them into a PKCS12 file (domain.pfx):
+> openssl pkcs12 -inkey domain.key -in domain.crt -export -out domain.pfx
+
+------------------------------------------------------------------------------
+If you want to obtain an SSL certificate, especially from a Certificate
+Authority (CA), you must generate a Certificate Signing Request (CSR).
+
+Whenever you generate a CSR, you will be prompted to enter various information,
+known as the Distinguished Name (DN) fields. An important field in the DN is
+the Common Name (CN), which should be the FQDN of the host you intend to use
+the certificate with.
+
+To Generate a Private Key and CSR:
+
+A. Use this method if you want to use HTTPS (HTTP over TLS) to secure your
+Apache HTTP or Nginx server, and you want to use a CA to issue the certificate.
+If your CA supports SHA-2, add the -sha256 option to sign the CSR with SHA-2:
+> openssl req -newkey rsa:2048 -nodes -keyout my.key -out my.csr
+  - the -nodes option indicates that the prikate key should not be encrytped
+    with a passphrase
+
+B. Use this method if you already have a private key that you would like to
+use to request a certificate from a CA:
+> openssl req -key my.key -new -out my.csr
+  - the -key option specifies an existing provate key
+
+C. Use this method if you want to renew an existing certificate but you or
+your CA do not have the original CSR for some reason.
+> openssl x509 -in my.crt -signkey my.key -x509toreq -out my.csr
+------------------------------------------------------------------------------
+Self-Signed Certificates
+
+A. Use this method if you want to use HTTPS (HTTP over TLS) to secure your
+Apache HTTP or Nginx web server, and you do not require that your certificate
+is signed by a CA:
+> openssl req -newkey rsa:2048 -nodes -keyout my.key -x509 -days 50 -out my.cst
+
+B. Use this method if you already have a private key that you would like to
+generate a self-signed certificate with it
+> openssl req -key my.key -new -x509 -days 365 -out my.crt
+------------------------------------------------------------------------------
+Viewing Certificates and CSRs
+
+View CSR
+> openssl req -text -noout -verify -in my.csr
+View Certificate
+> openssl x509 -text -noout -in my.crt
+Verify a certificate signed by a CA
+> openssl verify -verbose -CAFile ca.crt my.crt
