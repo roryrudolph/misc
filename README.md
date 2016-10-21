@@ -1,2 +1,6 @@
 # docs
-This is a place for miscellaneous documentation that I wind up using quite often. I wasn't sure of where else to put it, so I gave it its own repository. Some of these docs are (obviously) not mine and I don't take credit for them.
+
+This is a place for miscellaneous notes and documentation that I consolidated into one place. The content got here because I either wanted to document a process or wound up using the same resources quite often.
+
+Some of the files here are not mine but are publically available, and I do not take credit for any of them.
+
